@@ -8,6 +8,7 @@ body, html {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     color: black;
+    text-align: center;
   }
   
   .bg { 
@@ -16,9 +17,9 @@ body, html {
   
     /* Full height */
     height: 100%; 
-  
+    width:100%;
     /* Center and scale the image nicely */
-    background-position: center;
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -26,10 +27,11 @@ body, html {
 .container{
     background-color: rgba(118, 41, 144, 0.77);
     width: 60%;
-    height:90%;
+    height:100%;
     display: flex;
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
 }
+
 
 hr.drop_shadow {
     height: 10px;
@@ -40,6 +42,28 @@ hr.drop_shadow {
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
       border-radius: 5px;
+}
+h3{
+  font-weight: bold;
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+  color: black;
+}
+
+
+img{
+  height: 200px;
+  width:200px;
+}
+
+#trivia_info{
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+} 
+.last-seconds{
+  color: rgb(145, 7, 7);
 }
 
 
