@@ -1,11 +1,7 @@
 $(document).ready(function () {
 
     //defining events when clicking
-    $("#restart").hide();
-    $("#start").on("click",trivia.startGame); 
-    $("#remaining-time").hide();
-    $(document).on("click", "#option", trivia.answerCheck);
-})     
+   
 //defining question variables
 
 var trivia = {
@@ -85,7 +81,10 @@ var trivia = {
 
         $.each(questionOptions, function (_index, key) {
             $('#options').append($('<button class="option btn btn-info btn-lg">'+key+'</button>'));
-        
+            
+        })
+        $("#options").on("click", function(){
+            // alert("hello")
         })
     },
     
@@ -129,7 +128,7 @@ var trivia = {
     
         answerCheck : function() {        
         // the answer to the current question being asked
-        var currentAnswer = $("#options").on("click",trivia.answers)
+        var currentAnswer = $(this).Object.values(trivia.answers)
         [trivia.currentSet];
       
          
@@ -147,7 +146,7 @@ var trivia = {
         // else the user picked the wrong option, increment incorrect
         else{
           // turn button clicked red for incorrect
-          $(currentOptions).addClass('btn-danger').removeClass('btn-info');
+          $(currentAnswer).addClass('btn-danger').removeClass('btn-info');
           
           trivia.incorrect++;
           clearInterval(trivia.timerId);
@@ -169,12 +168,16 @@ var trivia = {
         
         // begin next question
         trivia.nextQuestion();
-         
       }
-    
     }
-
+    $("#restart").hide();
+    $("#start").on("click",trivia.startGame); 
+    $("#remaining-time").hide();
   
+    // $(document).on("click", "#options", function(){trivia.answerCheck();
+});
+
+
         
     
    
